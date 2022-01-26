@@ -1,119 +1,115 @@
 #include <iostream>
 #include <string>
-#include <cassert>
+#include "string.hpp"
 using namespace std;
 
-class st {
+/*class st {
 	public:
-st();
-st(string a);
-~st();
-std::string operator = (string k);
-std::string operator +(string g1);
-std::string operator += (string phv);
-int operator [] (int phv);
+	   st();
+	   st(const string a);
+	   ~st();
+	   string operator = (st& obj);
+	   string operator +(const st& obj);
+	   string operator += (const st& obj);
+	   int operator [] (int phv);
 	private:
-string str;
+           string str;
 	public:
-std::string append(string app);
-std::string swap(string a, string b);
- int size_g();
- void find_f(string q);
+           string append(const string &app);
+           string swap(st& obj);
+           int size_g();
+           void find_f(string q);
 };
+*/
 
-int st::size_g(){
-   cout <<str<<endl; 
-   cout << str.length()<<endl;
+ st::st(){
+      };
 
-   int size = str.length();
-   return size;
-};
-
-st::st(){
-};
-
-st::st(string a){
-   str=a;
+ st::st(const string a){
+        str=a;
         cout << str  <<endl;
+      };
+
+ st::~st(){
+      };
+ 
+ int st::size_g(){
+      int size = str.length();
+      return size;
+      };
+
+
+ string st::append(const string& app){
+ 
+       str=str+app;
+       return str;
+      };
+
+ string st::swap (st& obj){
+
+       string sw;
+       sw=str;
+       str=obj.str;
+       obj.str=sw;
+    return str, obj.str;
  };
 
-st::~st(){
-};
- 
-std::string st::append(string app){
- 
-  str=str+app;
-  return str;
-};
 
-std::string st::swap (string a, string b){
+ void st::find_f(string q){
 
-string c;
-c=a;
-a=b;
-b=c;
-
-return a,b;
-};
-
-
-void st::find_f(string q){
-
-        size_t pos = str.find(q);
-	if (pos != std::string::npos){
+      size_t pos = str.find(q);
+      if (pos != std::string::npos){
         cout << "Found " << endl;
 	}
-    else{
+      else{
         cout << "Not found"<< endl;
-    }
-};
+        }
+   };
 
-void test(){
-st b("Hello");
-b.size_g();
-b.find_f("lo");
-b.append("word");
-st a;
-}
 
-std::string st::operator = (string av ){
+ string st::operator = (st& obj){
 
-  	av=str;
-        cout << str <<endl;
+  	obj.str=str;
 	return str;
-};
+        };
 
 
-std::string st::operator +(string g1){
+ string st::operator +(const st& obj){
 
-     str = g1+str;
+     str = obj.str  +str;
      return str;
 
-};
+    };
 
 
-std::string  st::operator += (string phv){
+ string  st::operator += (const st& obj){
   
-str=phv+phv;
-
- return str;
-
-};
+          str=str+str;
+          return str;
+          };
 
 
 
-int st::operator [] (int phv){
-   
-  return str[phv];
+ int st::operator [] (int phv){
+     return str[phv];
+   };
+/*
+ void test(){
 
-};
-int main(){
-st S("hello");
-std::string my_st = "ggggg";
-std::string y = S+=(my_st);
-std::cout << y << std::endl;
-//test();
-
-return 0;
+    st b("Hello");
+    b.size_g();
+    b.find_f("lo");
+    b.append("word");
+    st a("Barev");
+    a.swap(b);
 }
 
+ int main(){
+  st S("Hala");
+  st t("Madrid");
+  string y = (t=S);
+  cout << y << endl;
+  test();
+
+    return 0;
+ }*/
