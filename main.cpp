@@ -17,8 +17,6 @@ void test(){
  int main(){
   st S("Hala");
   st t("Madrid");
-  string y = (t=S);
-  cout << y << endl;
   test();
 
     return 0;

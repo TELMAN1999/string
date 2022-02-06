@@ -7,15 +7,15 @@ class st {
            st();
            st(const string a);
            ~st();
-           string operator = (st& obj);
-           string operator +(const st& obj);
-           string operator += (const st& obj);
+           void operator = (st& obj);
+           void operator +(const st& obj);
+           void operator += (const st& obj);
            int operator [] (int phv);
         private:
            string str;
         public:
-           string append(const string &app);
-           string swap(st& obj);
+           void append(const string &app);
+           void swap(st& obj);
            int size_g();
            void find_f(string q);
 };

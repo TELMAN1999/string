@@ -3,24 +3,6 @@
 #include "string.hpp"
 using namespace std;
 
-/*class st {
-	public:
-	   st();
-	   st(const string a);
-	   ~st();
-	   string operator = (st& obj);
-	   string operator +(const st& obj);
-	   string operator += (const st& obj);
-	   int operator [] (int phv);
-	private:
-           string str;
-	public:
-           string append(const string &app);
-           string swap(st& obj);
-           int size_g();
-           void find_f(string q);
-};
-*/
 
  st::st(){
       };
@@ -39,19 +21,17 @@ using namespace std;
       };
 
 
- string st::append(const string& app){
+ void st::append(const string& app){
  
        str=str+app;
-       return str;
       };
 
- string st::swap (st& obj){
+ void st::swap (st& obj){
 
        string sw;
        sw=str;
        str=obj.str;
        obj.str=sw;
-    return str, obj.str;
  };
 
 
@@ -67,25 +47,22 @@ using namespace std;
    };
 
 
- string st::operator = (st& obj){
+void st::operator = (st& obj){
 
   	obj.str=str;
-	return str;
         };
 
 
- string st::operator +(const st& obj){
+ void st::operator +(const st& obj){
 
      str = obj.str  +str;
-     return str;
 
     };
 
 
- string  st::operator += (const st& obj){
+ void  st::operator += (const st& obj){
   
           str=str+str;
-          return str;
           };
 
 
@@ -93,23 +70,4 @@ using namespace std;
  int st::operator [] (int phv){
      return str[phv];
    };
-/*
- void test(){
 
-    st b("Hello");
-    b.size_g();
-    b.find_f("lo");
-    b.append("word");
-    st a("Barev");
-    a.swap(b);
-}
-
- int main(){
-  st S("Hala");
-  st t("Madrid");
-  string y = (t=S);
-  cout << y << endl;
-  test();
-
-    return 0;
- }*/
